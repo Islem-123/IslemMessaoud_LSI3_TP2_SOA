@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/BanqueService" xmlns:tns="http://www.example.org/BanqueService" elementFormDefault="qualified" >
-<element name="Compte">
-        <complexType>
-            <sequence>
-                <element name="code" type="string"/>
-                <element name="solde" type="decimal"/>
-                <element name="dateCreation" type="string"/>
-            </sequence>
-        </complexType>
-    </element>
 <element name="BanqueService">
 	<complexType>
 		<sequence>
-				<element name="conversion" type="tns:conversiontype">
-				
-			</element>
+				<element name="conversion" type="tns:conversiontype"></element>
+				<element name="getCompte" type="tns:Comptetype"></element>
+				<element name="getComptes" type="tns:Comptetype" minOccurs="1" maxOccurs="unbounded"></element>
+				<!-- minoccurs hiya akal haja maxoccurs hiya infini = unbounded  -->
 		</sequence>
-	</complexType>
+</complexType>
 </element>
 
 <complexType name="conversiontype">
@@ -24,4 +16,12 @@
 		<element name="montant" type="double"></element>
 	</sequence>
 </complexType>
-</schema>
+
+        <complexType name="Comptetype">
+            <sequence>
+                <element name="code" type="int"/>
+                <element name="solde" type="double"/>
+                <element name="dateCreat" type="date"/>
+            </sequence>
+        </complexType>
+  </schema>

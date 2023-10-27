@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT BanqueService (convension)>
+<!ELEMENT BanqueService (convension,getCompte,getComptes)>
 <!ELEMENT convension (montant)>
 <!ELEMENT montant (#PCDATA)>
+<!ELEMENT getCompte (Compte)>
+<!ELEMENT getComptes (Compte+)><!-- 0 lil infifini * 1 lil infini 0 -->
+<!ELEMENT Compte (code,solde,datecreat)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT solde (#PCDATA)>
+<!ELEMENT datecreat (#PCDATA)>
+
+
+
